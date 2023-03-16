@@ -1,0 +1,35 @@
+# do not commit datasets since it has sensitive info
+*/__pycache__/*
+openai_api_key.txt
+raw_data/*
+useful-commands.txt
+*/runs/*
+*.condatmp*
+*tmp*
+*.pyc*
+testing.csv
+datasets/108/cleaned_csc108_fall2021.csv
+datasets/413/csc413_2022_nostrip.csv
+datasets/413/csc413_2022.csv
+*.csv
+*.numbers 
+*.xlsx
+piazza-api/creds.json
+*.json
+*.txt 
+*.zip
+piazza_api/
+piazza_api
+deployment/config.py
+deployment/hello
+*.log
+deployment/.env
+
+# my virtual envs
+my_env_name/*
+qabot-test/*
+qabot-venv/*
+datasets/sample_data.csv
+
+.env
+sample_data.csv

@@ -1,0 +1,40 @@
+---
+
+general_params: 
+    posts-fetch-size: 20
+    num-answers: 2 # doesn't matter since we specify n param in model below
+    piazza-email: email@email.ca
+    openai-key-path: path-to-key.txt
+    piazza-courseid: piazza-courseid
+    log-prefix: ""
+    run_dir: ./runs/  # directory to store experiment runs
+    save_run: True # keep on for now
+    verbose: True
+
+    
+database_params: 
+    path: ./db/data.csv
+    
+
+
+classify_model_params: 
+    model: text-davinci-003 
+    max_tokens: 200
+    top_p: 1
+    temperature: 0
+    n: 1
+    prompt: PROMPT_BEST
+    
+    
+answer_model_params:  
+    model: text-davinci-003 
+    max_tokens: 200 
+    top_p: 1 
+    temperature: 0.7 
+    n: 2
+    prompt: ANSWER_PROMPT
+    
+
+
+
+
