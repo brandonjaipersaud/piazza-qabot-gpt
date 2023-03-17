@@ -12,7 +12,7 @@ This repo allows you to perform tasks such as the following:
 
 ## Environment Setup
 
-1. Create a new Python virtual environment by doing: ```python -m venv [VIRTUALENV-NAME]```
+1. Create a new Python virtual environment by doing: ```python -m venv <VIRTUALENV-NAME>```
    - ensure you are using python3.9 or higher
 2. Activate the virtual environment: ```source <venv>/bin/activate```
 3. Install dependencies: ```python -m pip install -r ./requirements.txt ```
@@ -28,7 +28,7 @@ python main.py -h
 
 # Question Classification and Answering Framework
 
-At a high-level, my framework takes a CSV file and performs question classification/answering across rows on the CSV. Experiment stats and the CSV file augmented with model classifications/answers gets saved to a directory. `experiments/` contains all files associated with running experiments.
+My framework takes a CSV file and performs question classification/answering across rows on the CSV. Experiment stats and the CSV file augmented with model classifications/answers gets saved to a directory. `experiments/` contains all files associated with running experiments.
 
 ## Directory Structure
 
@@ -47,11 +47,11 @@ python main.py experiments -re
 ```
 
 
-This will run `run_experiments.py` using the parameters in `hyperparameters.py`. The default hyperparameters are for the classification task. To do question-answering, rename `answer_hyperparameters.py` to `hyperparameters.py`. 
+This will run `run_experiments.py` using the parameters in `hyperparameters.py`. The default hyperparameters are for the classification task. To do question answering, rename `answer_hyperparameters.py` to `hyperparameters.py`. 
 
 ## How it works
 
-`hyperparameters.py` contains all the parameters associated with an experiment. Running the above command will perform classification/question-answering on dataset_params['dataset_path'] using dataset_params['num_samples']. Experiment info gets saved in general_params['run_dir]. 
+`hyperparameters.py` contains all the parameters associated with an experiment. Running the above command will perform classification/question answering on dataset_params['dataset_path'] using dataset_params['num_samples']. Experiment info gets saved in general_params['run_dir]. 
 
 ### Classification
 
