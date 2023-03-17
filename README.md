@@ -142,11 +142,17 @@ For students, the csv schema will look like:
 ```
 
 
+## Future Directions
 
+**Note that this is still a work in progress!** We are currently investigating:
+- GPT Index (renamed to LlamaIndex) for answering questions that rely on context [2]
+- GPT3.5 instead of text-davinci003
+- prompt engineering strategies
 
 ## References
 
 [1] [Decomposed Prompting: A Modular Approach for Solving Complex Tasks](https://arxiv.org/abs/2210.02406) 
+[2] https://gpt-index.readthedocs.io/en/latest/index.html
 
 
 
