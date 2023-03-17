@@ -14,9 +14,14 @@ This repo allows you to perform question classification/answering and various ot
 4. Store your openai api key in a text file and set general_params['openai-key-path'] to point to it. Alternatively, you can set the `OPENAI_API_KEY` environment variable. 
 5. Try running ``` python main.py experiments -re ``` which will classify 2 samples in: `datasets/sample-data.csv` and save the results in ```datasets/runs/```
 
+# General Usage
 
+The entry point of this program is in `main.py`. To see all options do:
+```
+python main.py -h
+```
 
-# Experiment Running Framework
+# Question Classification and Answering Framework
 
 At a high-level, my framework takes a CSV file and performs question classification/answering across rows on the CSV. Experiment stats and the CSV file augmented with model classifications/answers gets saved to a directory. `experiments/` contains all files associated with running experiments.
 
@@ -32,7 +37,10 @@ At a high-level, my framework takes a CSV file and performs question classificat
 
 ## Usage
 
-``` python main.py experiments -re ```
+``` 
+python main.py experiments -re 
+```
+
 
 This will run `run_experiments.py` using the parameters in `hyperparameters.py`. The default hyperparameters are for the classification task. To do question-answering, rename `answer_hyperparameters.py` to `hyperparameters.py`. 
 
@@ -44,11 +52,65 @@ This will run `run_experiments.py` using the parameters in `hyperparameters.py`.
 
 dataset_params['dataset_path'] should include a label called *target* (can be empty) which is the ground truth question category. The script will take this dataset, create a new column called *classification* and populate it with model classifications.
 
+# Computing Metrics
+
+## Usage
+
+To see csv metric computation options do:
+
+``` 
+python main.py metrics -h
+```
+
+This tool allows you to:
+
+- Compute ROUGE score and cosine similarity between instructor and model answer. You can also compute perplexity of the instructor answer.
+
+Doing:
+``` 
+python main.py metrics -m all
+```
+
+computes all metrics
+
+
+# CSV Augmentation
+
+## Usage
+
+To see csv augmentation options do:
+
+``` 
+python main.py augment -h
+```
+
+This tool allows you to:
+
+- perform general csv augmentations such as selecting certain columns, merging the columns of two csvs, etc. 
+- generate OpenAI and Cohere embeddings of the instructor and model answer.
+- Add timestamps to Piazza posts. 
+- Compare timestamps between model and instructor answer to determine if the instructor answer comes before/after the model answer
+
+
+
+# Deployment
+
+To deploy the bot on a Piazza instance do:
+
+``` 
+python deployment/run_bot.py
+```
+
+Configure the deployment parameters in `deployment/config.yaml`
+
+The deployment does two things. First, it classifies questions. Questions that are classified as *conceptual* will get answered and responded to on Piazza using the answer prompt in `experiments/prompts.py`.
+
+
 # Scraping Piazza posts
 
 `piazza_api_utils/scrape_posts.py` is a tool you can use to scrape Piazza posts.
 
-## General Usage
+## Usage
 
 Scrape Piazza posts and save it to a file called csc311.json:
 
@@ -74,13 +136,12 @@ For students, the csv schema will look like:
 (post_id,question_title,question,folders,student_answer,instructor_answer)
 ```
 
-# CSV Augmentation
 
 
 
 ## References
 
-[1]
+[1] [Decomposed Prompting: A Modular Approach for Solving Complex Tasks](https://arxiv.org/abs/2210.02406) 
 
 
 
