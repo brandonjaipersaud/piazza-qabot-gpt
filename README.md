@@ -151,7 +151,8 @@ For students, the csv schema will look like:
 
 ## References
 
-[1] [Decomposed Prompting: A Modular Approach for Solving Complex Tasks](https://arxiv.org/abs/2210.02406) 
+[1] [Decomposed Prompting: A Modular Approach for Solving Complex Tasks](https://arxiv.org/abs/2210.02406)
+ 
 [2] https://gpt-index.readthedocs.io/en/latest/index.html
 
 
