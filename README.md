@@ -3,7 +3,12 @@
 
 This repo implements a question-answering system that uses decomposed prompting [1] to answer questions on the Piazza discussion board. We have a paper that is currently under review at AIED and ITiCSE 2023 which will be linked here after it is finished being reviewed.
 
-This repo allows you to perform question classification/answering and various other tasks such as csv augmentation and computing metrics. 
+This repo allows you to perform tasks such as the following:
+- question classification/answering 
+- csv augmentation 
+- computing metrics
+- deploy the bot on your Piazza instance
+- scrape Piazza posts
 
 ## Environment Setup
 
