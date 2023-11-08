@@ -1,7 +1,9 @@
 
 # Introduction
 
-This repo implements a question-answering system that uses decomposed prompting [1] to answer questions on the Piazza discussion board. We have a paper that is currently under review at AIED and ITiCSE 2023 which will be linked here after it is finished being reviewed.
+This repo implements our question-answering system for answering student questions on the Piazza discussion board as outlined in our paper [1].
+
+See https://github.com/brandonjaipersaud/qabot-t5 for a prior implementation that uses T5 instead of GPT.
 
 This repo allows you to perform tasks such as the following:
 - question classification/answering 
@@ -151,7 +153,7 @@ For students, the csv schema will look like:
 
 ## References
 
-[1] [Decomposed Prompting: A Modular Approach for Solving Complex Tasks](https://arxiv.org/abs/2210.02406)
+[1] [Decomposed Prompting to Answer Questions on a Course Discussion Board](https://link.springer.com/chapter/10.1007/978-3-031-36336-8_33)
  
 [2] https://gpt-index.readthedocs.io/en/latest/index.html
 
